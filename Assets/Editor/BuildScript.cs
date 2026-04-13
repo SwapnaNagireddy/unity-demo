@@ -6,7 +6,7 @@ public class BuildScript
     public static void PerformBuild()
     {
         // 1. Setup build settings
-        //Hello
+        //Hello00
         string[] scenes = { "Assets/Scenes/SampleScene.unity" };
         string buildPath = "Builds/Mac/InterviewBuild.app";
 
