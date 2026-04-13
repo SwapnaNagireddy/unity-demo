@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest  # This tells GitHub to use a Mac server!
+    runs-on: macos-latest  # Mac server!
     
     steps:
     - name: Checkout Code
@@ -21,7 +21,7 @@ jobs:
 
     - name: Run Build Script
       env:
-        # This will trigger your script's "Validation Mode" automatically.
+        # trigger
         UNITY_PATH: "/Applications/Unity/Hub/Editor/6000.4.2f1/Unity.app/Contents/MacOS/Unity"
       run: python3 build_pipeline.py
 

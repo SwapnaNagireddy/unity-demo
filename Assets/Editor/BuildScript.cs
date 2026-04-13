@@ -5,17 +5,22 @@ public class BuildScript
 {
     public static void PerformBuild()
     {
-        // 1. Setup build settings
-        //Hello00
+        // scenes to include
         string[] scenes = { "Assets/Scenes/SampleScene.unity" };
-        string buildPath = "Builds/Mac/InterviewBuild.app";
+        
+        // output path
+        string buildPath = "Builds/Mac/Build.app";
 
-        // 2. Ensure the directory exists
-        Directory.CreateDirectory("Builds/Android");
+        // directory
+        string directory = Path.GetDirectoryName(buildPath);
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
 
-        // 3. Run the build
+        // Run the build
         BuildPipeline.BuildPlayer(scenes, buildPath, BuildTarget.StandaloneOSX, BuildOptions.None);
         
-        UnityEngine.Debug.Log("Pipeline Check: Build completed successfully!");
+        UnityEngine.Debug.Log("Pipeline Check: Build completed successfully at " + buildPath);
     }
 }
